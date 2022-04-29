@@ -42,12 +42,12 @@ const { NotImplementedError } = require('../extensions/index.js');
               return season[3]
       
       default:
-        return 'Invalid date!';
+        throw new Error ('Invalid date!') 
     }
 
   }else{
 
- return 'Invalid date!';
+    throw new Error ('Invalid date!') 
   }
 }
 
