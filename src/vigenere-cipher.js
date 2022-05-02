@@ -51,23 +51,24 @@ let indexA = 'A'.charCodeAt()
       if (this.alph.includes(message.toUpperCase()[i])) {
         let indexKey = keyArrSymbol[i].charCodeAt() - indexA;
         let indexStr = message.toUpperCase()[i].charCodeAt() - indexA;
-        let c;
-
+        let n;
         if (arg === 1) {
-         c = indexA + (indexKey + indexStr) % 26
+         n = indexA + (indexKey + indexStr) % 26
         }else {
-          c = indexA + (indexStr - indexKey + 26) % 26
+          n = indexA + (indexStr - indexKey + 26) % 26
         }
-        result.push(String.fromCharCode(c))
+        result.push(String.fromCharCode(n))
+        
       } 
       else {
         result.push(message.toUpperCase()[i])
       }
+    
     }
 
-    if (this.type === true ) {
+    if (this.type === true || this.type === undefined) {
       return result.join('')
-    } else  {
+    } else if (this.type === false) {
       return result.reverse().join('')
     }
 }
